@@ -25,7 +25,7 @@
   </style>
 </head>
 <body>
-  <div class="demo-banner">· Fictional bank · accounts, cards, or money</div>
+  <div class="banner">· Fictional bank · accounts, cards, or money</div>
   <header><div class="brand">northstar<span>•</span></div><div class="header-tag">SAMPLE ACCOUNT</div></header>
   <main>
     <div class="welcome"><div><h1>Good afternoon</h1><p>Here’s your sample account overview.</p></div><span class="pill">● </span></div>
@@ -45,16 +45,16 @@
         </div></div>
       </section>
       <aside>
-        <div class="panel"><h2>debit card</h2><div class="card-preview"><div class="card-top"><span>NORTHSTAR · </span><span>DEBIT</span></div><div class="chip"></div><div class="card-number">•••• &nbsp; •••• &nbsp; •••• &nbsp; 2048</div><div class="card-bottom"><span>DEMO CUSTOMER</span><span>CARD</span></div></div><p class="notice"></p></div>
+        <div class="panel"><h2>debit card</h2><div class="card-preview"><div class="card-top"><span>NORTHSTAR · </span><span>DEBIT</span></div><div class="chip"></div><div class="card-number">•••• &nbsp; •••• &nbsp; •••• &nbsp; 2048</div><div class="card-bottom"><span>CUSTOMER</span><span>CARD</span></div></div><p class="notice"></p></div>
         <div class="panel section-gap"><h2>Spending snapshot</h2><div class="transaction"><div class="avatar">⌂</div><div class="tx-copy"><div class="tx-name">Essentials</div><div class="tx-date">Sample spending</div></div><div class="amount">$420</div></div><div class="transaction"><div class="avatar">✦</div><div class="tx-copy"><div class="tx-name">Lifestyle</div><div class="tx-date">Sample spending</div></div><div class="amount">$200</div></div><div class="transaction"><div class="avatar">↗</div><div class="tx-copy"><div class="tx-name">Savings goal</div><div class="tx-date">progress</div></div><div class="amount positive">62%</div></div><p class="notice">All amounts and activity are fictional examples.</p></div>
-        <div class="panel section-gap"><h2>Need help?</h2><p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:14px">Explore this sample interface safely. No login is required.</p><button class="primary" onclick="showMessage('This is a fictional demo. No support request was sent.')">support</button></div>
+        <div class="panel section-gap"><h2>Need help?</h2><p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:14px">Explore this sample interface safely. login is required.</p><button class="primary" onclick="showMessage('This is a fictional account. No support request was sent.')">support</button></div>
       </aside>
     </div>
   </main>
   <div class="footer"><strong>FICTIONAL A BANK</strong><br>Northstar is a sample interface, banking.</div>
   <div class="modal-backdrop" id="transferModal" role="dialog" aria-modal="true" aria-labelledby="transferTitle">
-    <div class="modal"><button class="close" onclick="closeTransfer()" aria-label="Close">×</button><h2 id="transferTitle">Simulate a transfer</h2><p class="notice" style="margin-bottom:18px">Demo only. This will not send money.</p>
-      <form id="transferForm"><div class="form-row"><label for="recipient">Sample recipient</label><select id="recipient"><option>Alex Morgan · Demo</option><option>Jordan Lee · Demo</option><option>My Savings · Demo</option></select></div><div class="form-row"><label for="transferAmount">Amount (USD)</label><input id="transferAmount" type="number" min="0.01" max="8420.65" step="0.01" placeholder="25.00" required></div><button class="primary" type="submit">Simulate transfer</button></form><div class="feedback" id="feedback" role="status"></div></div>
+    <div class="modal"><button class="close" onclick="closeTransfer()" aria-label="Close">×</button><h2 id="transferTitle">Simulate a transfer</h2><p class="notice" style="margin-bottom:18px". This will send money.</p>
+      <form id="transferForm"><div class="form-row"><label for="recipient">Sample recipient</label><select id="recipient"><option>Alex Morgan · </option><option>Jordan Lee · </option><option>My Savings · </option></select></div><div class="form-row"><label for="transferAmount">Amount (USD)</label><input id="transferAmount" type="number" min="0.01" max="8420.65" step="0.01" placeholder="25.00" required></div><button class="primary" type="submit">Simulate transfer</button></form><div class="feedback" id="feedback" role="status"></div></div>
   </div>
   <script>
     let demoBalance = 8420.65;
@@ -66,18 +66,18 @@
       e.preventDefault();
       const amount = Number(document.getElementById('transferAmount').value);
       const recipient = document.getElementById('recipient').value;
-      if(!Number.isFinite(amount)||amount<=0||amount>demoBalance){showMessage('Enter a valid amount within the sample balance.');return;}
-      demoBalance = Math.round((demoBalance-amount)*100)/100;
-      document.getElementById('balance').textContent = demoBalance.toLocaleString('en-US',{style:'currency',currency:'USD'});
+      if(!Number.isFinite(amount)||amount<=0||amount>Balance){showMessage('Enter a valid amount within the sample balance.');return;}
+      Balance = Math.round((Balance-amount)*100)/100;
+      document.getElementById('balance').textContent = Balance.toLocaleString('en-US',{style:'currency',currency:'USD'});
       const row=document.createElement('div');row.className='transaction';
       const avatar=document.createElement('div');avatar.className='avatar';avatar.textContent='↗';
       const copy=document.createElement('div');copy.className='tx-copy';
-      const name=document.createElement('div');name.className='tx-name';name.textContent='Demo transfer · '+recipient.split(' · ')[0];
+      const name=document.createElement('div');name.className='tx-name';name.textContent='transfer · '+recipient.split(' · ')[0];
       const date=document.createElement('div');date.className='tx-date';date.textContent='Just now · Simulated only';
       copy.append(name,date);
       const amt=document.createElement('div');amt.className='amount negative';amt.textContent='−'+amount.toLocaleString('en-US',{style:'currency',currency:'USD'});
       row.append(avatar,copy,amt);document.getElementById('transactions').prepend(row);
-      const feedback=document.getElementById('feedback');feedback.textContent='Demo transfer complete. No money was sent; only this page’s sample balance changed.';feedback.style.display='block';
+      const feedback=document.getElementById('feedback');feedback.textContent= transfer complete. money was sent; page’s sample balance changed.';feedback.style.display=;
       this.reset();
     });
   </script>
